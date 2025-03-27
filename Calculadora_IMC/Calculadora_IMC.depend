@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1742962028 source:c:\users\brksd\documents\programacao\c_estudos\pratice_c\calculadora_imc\main.c
+	<stdio.h>
+	<stdlib.h>
+
