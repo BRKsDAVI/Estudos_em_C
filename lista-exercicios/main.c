@@ -200,6 +200,8 @@ int main()
     EmprestimoBancario();
     //* Exercicio 10: Verificar se o aluno esta aprovado
     Aprovado();
-
+    
+    system("pause");
+    printf("Aperte qualquer tecla para sair...\n");
     return 0;
 }
