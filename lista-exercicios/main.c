@@ -28,25 +28,25 @@ void AreaCirculo() {
     printf("Area do circulo eh: %.2f\n", area);
 }
 
-void NumeroAzulegio () {
-    float altParede, altAzulegio, largParede, largAzulegio, areaParede, areaAzulegio, numAzulegios;
+void NumeroAzulejo () {
+    float altParede, altAzulejo, largParede, largAzulejo, areaParede, areaAzulejo, numAzulejos;
 
     printf("Digite a altura da parede: ");
     scanf("%f", &altParede);
     printf("Digite a largura da parede: ");
     scanf("%f", &largParede);
     printf("Digite a altura do azulejo: ");
-    scanf("%f", &altAzulegio);
+    scanf("%f", &altAzulejo);
     printf("Digite a largura do azulejo: ");
-    scanf("%f", &largAzulegio);
+    scanf("%f", &largAzulejo);
 
     areaParede = altParede * largParede;
-    areaAzulegio = (altAzulegio/100) * (largAzulegio/100); // Convertendo para m²
+    areaAzulejo = (altAzulejo/100) * (largAzulejo/100); // Convertendo para m²
     printf("Area da parede eh: %.2f\n", areaParede);
-    printf("Area do azulejo eh: %.2f\n", areaAzulegio);
+    printf("Area do azulejo eh: %.2f\n", areaAzulejo);
 
-    numAzulegios = areaParede / areaAzulegio;
-    printf("Voce precisara de %.2f azulejos para cobrir a parede\n", numAzulegios);
+    numAzulejos = areaParede / areaAzulejo;
+    printf("Voce precisara de %.2f azulejos para cobrir a parede\n", numAzulejos);
 }
 
 int main()
@@ -56,7 +56,7 @@ int main()
     //* Exercicio 2: Calcular a area de um circulo
     AreaCirculo();
     //* Exercicio 3: Calcular a area de uma parede e quantos azulejos sao necessarios para cobri-la
-    NumeroAzulegio();
+    NumeroAzulejo();
 
 
     return 0;
