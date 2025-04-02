@@ -2,11 +2,13 @@
 #include <stdlib.h>
 #include <math.h>
 
-void Media() {
+void MediaNotas() {
     float num1, num2, num3, media;
-    printf("Insira as 3 notas para calcualar uma media: ");
+    printf("Insira a primeira nota: ");
     scanf("%f", &num1);
+    printf("Insira a segunda nota: ");
     scanf("%f", &num2);
+    printf("Insira a terceira nota: ");
     scanf("%f", &num3);
 
     media = (num1 + num2 + num3)/3;
@@ -14,7 +16,7 @@ void Media() {
     printf("Sua media eh de %.2f\n", media);
 }
 
-void Area () {
+void AreaCirculo() {
     float raio, area;
     float pi = 3.14;
 
@@ -23,17 +25,38 @@ void Area () {
 
     area = pi * (raio*raio);
 
-    printf("Area do circulo eh: %.2f", area);
+    printf("Area do circulo eh: %.2f\n", area);
 }
 
-void areaParede () {
-    float altParede, altAzulegio, largParede, largAzulegio;
+void NumeroAzulegio () {
+    float altParede, altAzulegio, largParede, largAzulegio, areaParede, areaAzulegio, numAzulegios;
+
+    printf("Digite a altura da parede: ");
+    scanf("%f", &altParede);
+    printf("Digite a largura da parede: ");
+    scanf("%f", &largParede);
+    printf("Digite a altura do azulejo: ");
+    scanf("%f", &altAzulegio);
+    printf("Digite a largura do azulejo: ");
+    scanf("%f", &largAzulegio);
+
+    areaParede = altParede * largParede;
+    areaAzulegio = (altAzulegio/100) * (largAzulegio/100); // Convertendo para m²
+    printf("Area da parede eh: %.2f\n", areaParede);
+    printf("Area do azulejo eh: %.2f\n", areaAzulegio);
+
+    numAzulegios = areaParede / areaAzulegio;
+    printf("Voce precisara de %.2f azulejos para cobrir a parede\n", numAzulegios);
 }
 
 int main()
 {
-    Media();
-    Area();
+    //* Exercicio 1: Calcular a media de 3 notas
+    MediaNotas();
+    //* Exercicio 2: Calcular a area de um circulo
+    AreaCirculo();
+    //* Exercicio 3: Calcular a area de uma parede e quantos azulejos sao necessarios para cobri-la
+    NumeroAzulegio();
 
 
     return 0;
