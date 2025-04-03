@@ -5,6 +5,7 @@
 
 void MediaNotas() {
     printf("Questao 1: Media de 3 notas\n");
+    printf("______________________________________\n");
     float num1, num2, num3, media;
     printf("Insira a primeira nota: ");
     scanf("%f", &num1);
@@ -20,6 +21,7 @@ void MediaNotas() {
 
 void AreaCirculo() {
     printf("Questao 2: Area de um circulo\n");
+    printf("______________________________________\n");
     float raio, area;
     float pi = 3.14;
 
@@ -33,6 +35,7 @@ void AreaCirculo() {
 
 void NumeroAzulejo () {
     printf("Questao 3: Numero de azulejos\n");
+    printf("______________________________________\n");
     float altParede, altAzulejo, largParede, largAzulejo, areaParede, areaAzulejo, numAzulejos;
 
     printf("Digite a altura da parede: ");
@@ -55,6 +58,7 @@ void NumeroAzulejo () {
 
 void CampusParty() {
     printf("Questao 4: Permissao para ir a Campus Party\n");
+    printf("______________________________________\n");
     char dinheiro[10], permissao[10];
     printf("Voce tem dinheiro para ir a Campus Party? (sim/nao): ");
     scanf("%s", dinheiro);
@@ -70,6 +74,7 @@ void CampusParty() {
 
 void Alistamento() {
     printf("Questao 5: Verificacao se presica se alistar\n");
+    printf("______________________________________\n");
     int idade;
     char sexo;
     printf("Digite seu sexo (m para masculino, f para feminino): ");
@@ -88,7 +93,7 @@ void Alistamento() {
 
 void Numero100a200() {
     printf("Questao 6: Verificacao se o numero esta entre 100 e 200\n");
-    printf("Questao 6: Numero entre 100 e 200\n");
+    printf("______________________________________\n");
     int num;
     printf("Digite um numero entre 0 e 1000: ");
     scanf("%d", &num);
@@ -102,6 +107,7 @@ void Numero100a200() {
 
 void Maioridade() {
     printf("Questao 7: Verificacao se eh maior de idade\n");
+    printf("______________________________________\n");
     int idade;
     printf("Digite sua idade: ");
     scanf("%d", &idade);
@@ -117,6 +123,7 @@ void Maioridade() {
 
 void Iguadade() {
     printf("Questao 8: Verificacao se os numeros sao iguais ou diferentes\n");
+    printf("______________________________________\n");
     int num1, num2, num3;
     printf("Digite o primeiro numero: ");
     scanf("%d", &num1);
@@ -136,6 +143,7 @@ void Iguadade() {
 
 void EmprestimoBancario () {
     printf("Qestao 9: Emprestimo Bancario\n");
+    printf("______________________________________\n");
     float salario, valorEmprestimo, numParcelas, valorParcela;
 
     printf("Digite seu salario: ");
@@ -156,6 +164,7 @@ void EmprestimoBancario () {
 
 void Aprovado() {
     printf("Questao 10: Verifica se um aluno esta aprovado\n");
+    printf("______________________________________\n");
     float nota1, nota2,nota3, nota4, media;
 
     printf("Digite a primeira nota: ");
@@ -175,6 +184,42 @@ void Aprovado() {
         printf("Recuperacao!\n");
     } else {
         printf("Reprovado!\n");
+    }
+}
+
+void Crecente() {
+    printf("Questao 11: Organiza os numeros em ordem crescente\n");
+    printf("______________________________________\n");
+    int num1, num2, num3;
+
+    printf("Digite o primeiro numero: ");  
+    scanf("%d", &num1);
+    printf("Digite o segundo numero: ");
+    scanf("%d", &num2);
+    printf("Digite o terceiro numero: ");
+    scanf("%d", &num3);
+
+    if (num1 < num2 && num1 < num3) {
+        printf("%d ", num1);
+        if (num2 < num3) {
+            printf("%d %d\n", num2, num3);
+        } else {
+            printf("%d %d\n", num3, num2);
+        }
+    } else if (num2 < num1 && num2 < num3) {
+        printf("%d ", num2);
+        if (num1 < num3) {
+            printf("%d %d\n", num1, num3);
+        } else {
+            printf("%d %d\n", num3, num1);
+        }
+    } else {
+        printf("%d ", num3);
+        if (num1 < num2) {
+            printf("%d %d\n", num1, num2);
+        } else {
+            printf("%d %d\n", num2, num1);
+        }
     }
 }
 
@@ -200,6 +245,8 @@ int main()
     EmprestimoBancario();
     //* Exercicio 10: Verificar se o aluno esta aprovado
     Aprovado();
+    //* Exercicio 11: Organizar os numeros em ordem crescente
+    Crecente();
     
     system("pause");
     printf("Aperte qualquer tecla para sair...\n");
