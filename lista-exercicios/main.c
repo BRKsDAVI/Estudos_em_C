@@ -225,30 +225,104 @@ void Crecente() {
 
 int main()
 {
-    //* Exercicio 1: Calcular a media de 3 notas
-    MediaNotas();
-    //* Exercicio 2: Calcular a area de um circulo
-    AreaCirculo();
-    //* Exercicio 3: Calcular a area de uma parede e quantos azulejos sao necessarios para cobri-la
-    NumeroAzulejo();
-    //* Exercicio 4: Verificar se o usuario pode ir a Campus Party
-    CampusParty();
-    //* Exercicio 5: Verificar se o usuario deve se alistar
-    Alistamento();
-    //* Exercicio 6: Verificar se o numero esta entre 100 e 200
-    Numero100a200();
-    //* Exercicio 7: Verificar se o usuario eh maior de idade
-    Maioridade();
-    //* Exercicio 8: imprimir se os numeros sao iguais ou diferentes
-    Iguadade();
-    //* Exercicio 9: Verificar se o emprestimo bancario foi aprovado
-    EmprestimoBancario();
-    //* Exercicio 10: Verificar se o aluno esta aprovado
-    Aprovado();
-    //* Exercicio 11: Organizar os numeros em ordem crescente
-    Crecente();
+    int opcao;
     
-    system("pause");
-    printf("Aperte qualquer tecla para sair...\n");
+    while (opcao != 29) {
+        printf("Escolha uma questao de 1 a 28\n");
+        printf("29. Sair\n");
+        scanf("%d", &opcao);
+        
+        switch(opcao) {
+            case 1:
+                MediaNotas();
+                break;
+            case 2:
+                AreaCirculo();
+                break;
+            case 3:
+                NumeroAzulejo();
+                break;
+            case 4:
+                CampusParty();
+                break;
+            case 5:
+                Alistamento();
+                break;
+            case 6:
+                Numero100a200();
+                break;
+            case 7:
+                Maioridade();
+                break;
+            case 8:
+                Iguadade();
+                break;
+            case 9:
+                EmprestimoBancario();
+                break;
+            case 10:   
+                Aprovado();
+                break;
+            case 11:
+                Crecente();
+                break;
+            case 12:
+                
+                break;
+            case 13:
+                
+                break;
+            case 14:
+                
+                break;
+            case 15:
+                
+                break;
+            case 16:
+                
+                break;
+            case 17:
+                
+                break;
+            case 18:
+                
+                break;
+            case 19:
+                
+                break;
+            case 20:
+                
+                break;
+            case 21:
+                
+                break;
+            case 22:
+                
+                break;
+            case 23:
+                
+                break;
+            case 24:
+                
+                break;
+            case 25:
+                
+                break;
+            case 26:
+                
+                break;
+            case 27:
+                
+                break;
+            case 28:
+                
+                break;
+            case 29:
+                exit(0);
+            default:
+                printf("Opcao invalida!\n");
+        }
+    }
+
     return 0;
 }
