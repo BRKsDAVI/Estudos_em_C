@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include <string.h>
+#include <stdbool.h>
 
 void MediaNotas() {
     printf("Questao 1: Media de 3 notas\n");
