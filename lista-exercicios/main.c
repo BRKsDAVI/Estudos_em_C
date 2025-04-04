@@ -242,6 +242,131 @@ void Fibonacci() {
     }
 }
 
+void InicialFinal() {
+    printf("Questao 13: Numero inicial, final e sequencia \n");
+    printf("______________________________________\n");
+    int numInicial, numFinal;
+    printf("Digite o numero inicial: ");
+    scanf("%d", &numInicial);
+    printf("Digite o numero final: ");
+    scanf("%d", &numFinal); 
+
+    for (int i = numInicial; i <= numFinal; i++) {
+        printf("%d ", i);
+    }
+}
+
+void Tabuada() {
+    printf("Questao 14: Tabuada\n");
+    printf("______________________________________\n");
+    int num, i;
+    printf("Digite um numero para ver a tabuada: ");
+    scanf("%d", &num);
+
+    for (i = 1; i <= 10; i++) {
+        printf("%d x %d = %d\n", num, i, num * i);
+    }
+}
+
+void Imparar100a200() {
+    printf("Questao 15: Numeros impares entre 100 e 200\n");
+    printf("______________________________________\n");
+    for (int i = 101; i < 200; i += 2) {
+        printf("%d ", i);
+    }
+}
+
+void MediaSala() {
+    printf("Questao 16: Media da sala\n");
+    printf("______________________________________\n");
+    int numAlunos, i;
+    float nota1, nota2, media;
+    printf("Digite o numero de alunos: ");
+    scanf("%d", &numAlunos);
+    
+    for (i = 1; i <= numAlunos; i++) {
+        printf("Digite a primeira nota do aluno %d: ", i);
+        scanf("%f", &nota1);
+        printf("Digite a segunda nota do aluno %d: ", i);
+        scanf("%f", &nota2);
+        
+        media = (nota1 + nota2) / 2;
+        printf("A media do aluno %d eh: %.2f\n", i, media);
+    }
+    
+}
+
+void Soma10Numeros() {
+    printf("Questao 17: Soma de 10 numeros\n");
+    printf("______________________________________\n");
+    int num, soma = 0;
+    for (int i = 1; i <= 10; i++) {
+        printf("Digite o %d numero: ", i);
+        scanf("%d", &num);
+        soma += num;
+    }
+    printf("A soma dos numeros eh: %d\n", soma);
+}
+
+void SomaTodosNUmeros() {
+    printf("Questao 18: Soma de todos os numeros\n");
+    printf("______________________________________\n");
+    int num, soma = 0;
+    printf("Digite um numero (0 para sair): ");
+    scanf("%d", &num);
+
+    while (num != 0) {
+        soma += num;
+        printf("Digite um numero (0 para sair): ");
+        scanf("%d", &num);
+    }
+
+    printf("A soma dos numeros eh: %d\n", soma);
+}
+
+void SomaNumerosPares() {
+    printf("Questao 19: Soma de numeros pares\n");
+    printf("______________________________________\n");
+    int num, soma = 0;
+    
+    while (num != 0) {
+        printf("Digite um numero (0 para sair): ");
+        scanf("%d", &num);
+        
+        if (num % 2 == 0) {
+            soma += num;
+        }
+    } 
+
+    printf("A soma dos numeros pares digitado eh: %d\n", soma);
+}
+
+void MaiorMenor() {
+    printf("Questao 20: Maior e menor numero\n");
+    printf("______________________________________\n");
+    int num, maior, menor;
+    
+    printf("Digite um numero (0 para sair): ");
+    scanf("%d", &num);
+    
+    maior = menor = num;
+    
+    while (num != 0) {
+        if (num > maior) {
+            maior = num;
+        }
+        if (num < menor) {
+            menor = num;
+        }
+        
+        printf("Digite um numero (0 para sair): ");
+        scanf("%d", &num);
+    }
+    
+    printf("O maior numero eh: %d\n", maior);
+    printf("O menor numero eh: %d\n", menor);
+}
+
 int main()
 {
     int opcao;
@@ -289,28 +414,28 @@ int main()
                 Fibonacci();
                 break;
             case 13:
-                
+                InicialFinal();
                 break;
             case 14:
-                
+                Tabuada();
                 break;
             case 15:
-                
+                Imparar100a200();
                 break;
             case 16:
-                
+                MediaSala();
                 break;
             case 17:
-                
+                Soma10Numeros();
                 break;
             case 18:
-                
+                SomaTodosNUmeros();
                 break;
             case 19:
-                
+                SomaNumerosPares();
                 break;
             case 20:
-                
+                MaiorMenor();
                 break;
             case 21:
                 
