@@ -223,12 +223,30 @@ void Crecente() {
     }
 }
 
+void Fibonacci() {
+    printf("Questao 12: Sequencia de Fibonacci\n");
+    printf("______________________________________\n");
+    int num, i, termo1 = 0, termo2 = 1, proximoTermo = 0;
+
+    printf("Digite o numero de termos: ");
+    scanf("%d", &num);
+
+    printf("Sequencia de Fibonacci: %d, %d, ", termo1, termo2);
+
+    for (i = 3; i <= num; ++i) {
+        proximoTermo = termo1 + termo2;
+        printf("%d, ", proximoTermo);
+        termo1 = termo2;
+        termo2 = proximoTermo;
+    }
+}
+
 int main()
 {
     int opcao;
     
     while (opcao != 29) {
-        printf("Escolha uma questao de 1 a 28\n");
+        printf("\nEscolha uma questao de 1 a 28\n");
         printf("29. Sair\n");
         scanf("%d", &opcao);
         
@@ -267,7 +285,7 @@ int main()
                 Crecente();
                 break;
             case 12:
-                
+                Fibonacci();
                 break;
             case 13:
                 
