@@ -367,6 +367,165 @@ void MaiorMenor() {
     printf("O menor numero eh: %d\n", menor);
 }
 
+void LerSexo() {
+    printf("Questao 21: Ler sexo\n");
+    printf("______________________________________\n");
+    char sexo;
+    printf("Digite seu sexo (m para masculino, f para feminino): ");
+    scanf("%s", &sexo);
+
+    if (sexo == 'm') {
+        printf("Sexo masculino\n");
+    } else if (sexo == 'f') {
+        printf("Sexo feminino\n");
+    } else {
+        printf("Sexo invalido\n");
+    }
+}
+
+void SomaIntervalo() {
+    printf("Questao 22: Soma de numeros em um intervalo\n");
+    printf("______________________________________\n");
+    int num1, num2, soma = 0;
+    
+    do {
+        printf("Digite o primeiro numero: ");
+        scanf("%d", &num1);
+        printf("Digite o segundo numero: ");
+        scanf("%d", &num2);
+        
+        if (num1 < 1 || num1 > 100 || num2 < 1 || num2 > 100) {
+            printf("Ambos os numeros devem estar no intervalo de 1 a 100. Tente novamente.\n");
+        }
+    } while (num1 < 1 || num1 > 100 || num2 < 1 || num2 > 100);
+    soma = num1 + num2;
+    printf("A soma dos numeros %d e %d eh: %d\n", num1, num2, soma);
+}
+
+void Fatorial() {
+    printf("Questao 23: Calculo do fatorial\n");
+    printf("______________________________________\n");
+    int num, i;
+    long long fatorial = 1;
+    
+    printf("Digite um numero para calcular o fatorial: ");
+    scanf("%d", &num);
+    
+    for (i = 1; i <= num; i++) {
+        fatorial *= i;
+    }
+    
+    printf("O fatorial de %d eh: %lld\n", num, fatorial);
+}
+
+void MediaTimeVolei() {
+    printf("Questao 24: Media de um time de volei\n");
+    printf("______________________________________\n");
+    int numJogadores, i;
+    float altura, mediaAltura = 0;
+
+    printf("Digite o numero de jogadores: ");
+    scanf("%d", &numJogadores);
+
+    for(i = 1; i <= numJogadores; i++) {
+        printf("Digite a altura do jogador %d: ", i);
+        scanf("%f", &altura);
+        mediaAltura += altura;
+    }
+    
+    mediaAltura /= numJogadores;
+    printf("A media de altura do time eh: %.2f\n", mediaAltura);
+}
+
+void MissVencedora() {
+    printf("Questao 25: Miss vencedora\n");
+    printf("______________________________________\n");
+    int numCandidatas = 16, i, nota, missVencedora = 0;
+    char nome[50], nomeVencedora[50];
+    float maiorNota = 0;
+
+    if (nota > 10 || nota < 0) {
+        printf("Nota invalida! A nota deve ser entre 0 e 10.\n");
+    } else {
+        for(i = 1; i <= numCandidatas; i++) {
+            printf("Digite o nome da candidata %d: ", i);
+            scanf("%s", nome);
+            printf("Digite a nota da candidata %d: ", i);
+            scanf("%d", &nota);
+
+            if (nota > maiorNota) {
+                maiorNota = nota;
+                missVencedora = i;
+                strcpy(nomeVencedora, nome);
+            }
+        }
+        printf("A miss vencedora eh a candidata %s com nota %.2f\n", nomeVencedora, maiorNota);  
+    }
+    
+}
+
+void NumeroPrimo() {
+    printf("Questao 26: Verifica se o numero eh primo\n");
+    printf("______________________________________\n");
+    int num, i, divisivel, primo = 1;
+
+    printf("Digite um numero: ");
+    scanf("%d", &num);
+    
+    if (num < 2) {
+        primo = 0;
+    } else {
+        for (i = 2; i <= sqrt(num); i++) {
+            if (num % i == 0) {
+                primo = 0;
+                divisivel = i;
+                break;
+            }
+        }
+    }
+    if (primo) {
+        printf("O numero %d eh primo\n", num);
+    } else {
+        printf("O numero %d nao eh primo\n ele eh divisivel por %d\n", num, divisivel);
+    }
+}
+
+void BaseExpoente() {
+    printf("Questao 27: Calculo de base e expoente\n");
+    printf("______________________________________\n");
+    int base, expoente, resultado = 1;
+    
+    printf("Digite a base: ");
+    scanf("%d", &base);
+    printf("Digite o expoente: ");
+    scanf("%d", &expoente);
+    
+    for (int i = 1; i <= expoente; i++) {
+        resultado *= base;
+    }
+    
+    printf("%d elevado a %d eh: %d\n", base, expoente, resultado);
+}
+
+void SomaNumerosPrimos() {
+    printf("Questao 28: Soma de todos numeros primos de 1 ate 100\n");
+    printf("______________________________________\n");
+    int num, i, soma = 0, primo = 1;
+    for (num = 2; num <= 100; num++) {
+        primo = 1;
+        for (i = 2; i <= sqrt(num); i++) {
+            if (num % i == 0) {
+                primo = 0;
+                break;
+            }
+        }
+        if (primo) {
+            soma += num;
+        }
+    }
+    printf("A soma dos numeros primos de 1 a 100 eh: %d\n", soma);
+}
+
 int main()
 {
     int opcao;
@@ -438,28 +597,28 @@ int main()
                 MaiorMenor();
                 break;
             case 21:
-                
+                LerSexo();
                 break;
             case 22:
-                
+                SomaIntervalo();
                 break;
             case 23:
-                
+                Fatorial();
                 break;
             case 24:
-                
+                MediaTimeVolei();
                 break;
             case 25:
-                
+                MissVencedora();
                 break;
             case 26:
-                
+                NumeroPrimo();
                 break;
             case 27:
-                
+                BaseExpoente();
                 break;
             case 28:
-                
+                SomaNumerosPrimos();
                 break;
             case 29:
                 exit(0);
