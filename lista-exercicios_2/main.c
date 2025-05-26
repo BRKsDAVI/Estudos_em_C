@@ -341,6 +341,146 @@ void buscaValorMatriz() {
     }
 }
 
+void maiorValorMatriz4x4() {
+    int matriz1[4][4], matriz2[4][4], matriz3[4][4];
+    int i, j;
+    printf("Digite os elementos da matriz 1 4x4:\n");
+    for (i = 0; i < 4; i++) {
+        for (j = 0; j < 4; j++) {
+            printf("Elemento [%d][%d]: ", i, j);
+            scanf("%d", &matriz1[i][j]);
+        }
+    }
+
+    printf("Digite os elementos da matriz 2 4x4:\n");
+    for (i = 0; i < 4; i++) {
+        for (j = 0; j < 4; j++) {
+            printf("Elemento [%d][%d]: ", i, j);
+            scanf("%d", &matriz2[i][j]);
+        }
+    }
+
+    printf("Resultado dos maiores elementos de cada matriz:\n");
+    for (i = 0; i < 4; i++) {
+        for (j = 0; j < 4; j++) {
+            if (matriz1[i][j] > matriz2[i][j]) {
+                matriz3[i][j] = matriz1[i][j];
+            } else {
+                matriz3[i][j] = matriz2[i][j];
+            }
+        }
+    }
+
+    printf("Matriz resultante:\n");
+    for (i = 0; i < 4; i++) {
+        for (j = 0; j < 4; j++) {
+            printf("%d ", matriz3[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+void somaDiagonalMatriz() {
+    int matriz[3][3];
+    int i, j, soma = 0;
+
+    printf("Digite os elementos da matriz 3x3:\n");
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 3; j++) {
+            printf("Elemento [%d][%d]: ", i, j);
+            scanf("%d", &matriz[i][j]);
+            if (i == j) {
+                soma += matriz[i][j];
+            }
+        }
+    }
+
+    printf("A soma dos elementos da diagonal principal eh: %d\n", soma);
+}
+
+void matrizTriangularInferior() {
+    int matriz[4][4];
+    int i, j;
+
+    printf("Digite os elementos da matriz 4x4:\n");
+    for (i = 0; i < 4; i++) {
+        for (j = 0; j < 4; j++) {
+            printf("Elemento [%d][%d]: ", i, j);
+            scanf("%d", &matriz[i][j]);
+        }
+    }
+
+    printf("Matriz triangular inferior:\n");
+    for (i = 0; i < 4; i++) {
+        for (j = 0; j < 4; j++) {
+            if (i >= j) {
+                printf("%d ", matriz[i][j]);
+            } else {
+                printf("0 ");
+            }
+        }
+        printf("\n");
+    }
+}
+
+void notasAlunos() {
+    int alunos[5][4];
+    int i, maiorNota = -1, indiceMaior = 0;
+    float somaNotas = 0;
+
+    printf("Digite os dados dos 5 alunos:\n");
+    for (i = 0; i < 5; i++) {
+        printf("\nAluno %d:\n", i + 1);
+        printf("Numero de matricula: ");
+        scanf("%d", &alunos[i][0]);
+        printf("Media das provas: ");
+        scanf("%d", &alunos[i][1]);
+        printf("Media dos trabalhos: ");
+        scanf("%d", &alunos[i][2]);
+        // Calcula nota final
+        alunos[i][3] = alunos[i][1] + alunos[i][2];
+        somaNotas += alunos[i][3];
+        // Verifica maior nota final
+        if (alunos[i][3] > maiorNota) {
+            maiorNota = alunos[i][3];
+            indiceMaior = i;
+        }
+    }
+
+    
+
+    printf("\nMatricula do aluno com maior nota final: %d\n", alunos[indiceMaior][0]);
+    printf("Media aritmetica das notas finais: %.2f\n", somaNotas / 5.0);
+}
+
+void corrigeProva() {
+    char gabarito[10];
+    char respostas[10];
+    int i, nota = 0;
+
+    printf("Digite o gabarito da prova (10 letras - a, b, c ou d):\n");
+    for (i = 0; i < 10; i++) {
+        printf("Questao %d: ", i + 1);
+        scanf(" %c", &gabarito[i]);
+    }
+
+    printf("\nDigite as respostas do aluno (10 letras - a, b, c ou d):\n");
+    for (i = 0; i < 10; i++) {
+        printf("Resposta da questao %d: ", i + 1);
+        scanf(" %c", &respostas[i]);
+        if (respostas[i] == gabarito[i]) {
+            nota++;
+        }
+    }
+
+    printf("\nNota do aluno: %d\n", nota);
+    if (nota >= 7) {
+        printf("Aluno aprovado!\n");
+    } else {
+        printf("Aluno reprovado.\n");
+    }
+}
+
 int main() {
     int opcao;
     do {
@@ -444,26 +584,31 @@ int main() {
                 printf("_______________//_______________\n");
                 printf("Opcao 16 selecionada\n");
                 printf("________________________________\n");
+                maiorValorMatriz4x4();
                 break;
             case 17:
                 printf("_______________//_______________\n");
                 printf("Opcao 17 selecionada\n");
                 printf("________________________________\n");
+                somaDiagonalMatriz();
                 break;
             case 18:
                 printf("_______________//_______________\n");
                 printf("Opcao 18 selecionada\n");
                 printf("________________________________\n");
+                matrizTriangularInferior();
                 break;
             case 19:
                 printf("_______________//_______________\n");
                 printf("Opcao 19 selecionada\n");
                 printf("________________________________\n");
+                notasAlunos();
                 break;
             case 20:
                 printf("_______________//_______________\n");
                 printf("Opcao 20 selecionada\n");
                 printf("________________________________\n");
+                corrigeProva();
                 break;
             case 0:
                 printf("_______________//_______________\n");
